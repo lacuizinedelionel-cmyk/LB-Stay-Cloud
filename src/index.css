@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: var(--brand-bg, #1A1A28);
+  --color-primary: var(--brand-primary, #F4A623);
+  --color-secondary: var(--brand-secondary, #C8A96E);
+  --color-card: var(--brand-card, #252538);
+  --color-border: #2E2E45;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #9CA3AF;
+  --color-success: #10B981;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  --font-title: var(--brand-font-title, 'Playfair Display'), serif;
+  --font-body: var(--brand-font-body, 'Inter'), sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fade-slide-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+.animate-bounce-arrow {
+  animation: bounce-arrow 1.5s ease-in-out infinite;
+}
+
+.animate-fade-slide {
+  animation: fade-slide-in 0.4s ease-out;
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-badge {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(244, 166, 35, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(244, 166, 35, 0); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-count-up {
+  animation: count-up 0.6s ease-out both;
+}
+
+.animate-pulse-badge {
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-slow 3s ease-in-out infinite;
+}
+
+.backdrop-blur-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
