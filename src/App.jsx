@@ -23,6 +23,7 @@ import AdminNotificationsPage from './pages/admin/AdminNotificationsPage'
 import AdminProfilePage from './pages/admin/AdminProfilePage'
 import AdminWhatsAppPage from './pages/admin/AdminWhatsAppPage'
 import KitchenDisplayPage from './pages/KitchenDisplayPage'
+import TrackOrderPage from './pages/TrackOrderPage'
 import SuperAdminDashboard from './pages/superadmin/SuperAdminDashboard'
 import SuperAdminLayout from './components/superadmin/SuperAdminLayout'
 
@@ -55,6 +56,7 @@ export default function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/track/:orderId" element={<TrackOrderPage />} />
 
       {/* POS — plein écran, pas de layout wrapper */}
       <Route
